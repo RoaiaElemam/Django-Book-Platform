@@ -25,9 +25,8 @@ class Review (models.Model):
     book=models.ForeignKey('Book',on_delete=models.CASCADE,related_name='review_book')
     reviewer_name=models.CharField(max_length=30)
     content=models.TextField(max_length=50000)
-    rating = models.SmallIntegerField(choices=[(i, i) for i in range(1, 5)],default=1)
+    rating = models.SmallIntegerField(choices=[(i, i) for i in range(1, 6)],default=1)
 
-    
 
     def __str__(self):
-      return self.book
+      return self.reviewer_name
