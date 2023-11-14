@@ -27,8 +27,6 @@ def create_book(n):
             price=random.randint(50,150),
             author=Author.objects.all().order_by('?')[0],
             
-
-            
         )
     print(f"{n}book was added sucessfully")
 
