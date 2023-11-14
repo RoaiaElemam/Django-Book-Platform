@@ -16,7 +16,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from book.api import BookListApi , BookDetailApi
+from book.api import BookListApi , BookDetailApi ,AuthorListApi,AuthorDetailApi
 
 from django.conf import settings
 from django.conf.urls.static import static
@@ -26,6 +26,9 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/list',BookListApi.as_view()),
     path('api/list/<int:pk>',BookDetailApi.as_view()),
+    path('api/list/author',AuthorListApi.as_view()),
+    path('api/list/author/<int:pk>',AuthorDetailApi.as_view()),
+
 
 ]
 
